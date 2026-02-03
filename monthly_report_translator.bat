@@ -7,10 +7,11 @@ echo.
 REM Use the current directory as script location
 set SCRIPT_DIR=%~dp0
 
-echo Running translate.py...
+echo Running monthly-report.ipynb...
 echo.
 
-python "%SCRIPT_DIR%translate.py"
+REM Execute the notebook and overwrite it with the executed version
+jupyter nbconvert --to notebook --execute "%SCRIPT_DIR%monthly-report.ipynb" --output "%SCRIPT_DIR%monthly-report.ipynb"
 
 echo.
 echo ===============================================
